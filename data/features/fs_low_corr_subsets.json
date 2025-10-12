@@ -1,0 +1,1345 @@
+{
+  "feature_sets": [
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "range_hl",
+      "log_volume"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "range_hl",
+      "hour_cos"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "rolling_std_1h",
+      "log_volume"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "range_hl",
+      "macd"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "range_hl",
+      "ma20_rel"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "log_volume",
+      "hour_cos"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "log_volume",
+      "macd"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "rolling_std_1h",
+      "hour_cos"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "log_volume",
+      "ma20_rel"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "range_hl",
+      "dist_max20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "rolling_std_1h",
+      "macd"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "range_hl",
+      "dist_min20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "rolling_std_1h",
+      "ma20_rel"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "log_volume",
+      "dist_max20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "log_volume",
+      "dist_min20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "hour_cos",
+      "macd"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "hour_cos",
+      "ma20_rel"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "rolling_std_1h",
+      "dist_max20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "rolling_std_1h",
+      "dist_min20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "hour_cos",
+      "dist_max20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "hour_cos",
+      "dist_min20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "dist_max20",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "log_volume",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "log_volume",
+      "macd"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "range_hl"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "log_volume",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "log_volume",
+      "ma20_rel"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "log_volume"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "log_volume",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "log_volume",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "log_volume",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "log_volume",
+      "hour_cos"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "log_volume",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "hour_cos",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "log_volume",
+      "hour_cos"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "log_volume",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "hour_cos",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "hour_cos",
+      "macd"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "rolling_std_1h"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "hour_cos"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "log_volume",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "hour_cos",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "log_volume",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "log_volume",
+      "hour_cos"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "log_volume",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "hour_cos",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "hour_cos",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "hour_cos",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "hour_cos",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "hour_cos",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "dist_max20",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "hour_cos",
+      "dist_min20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "hour_cos",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "hour_cos",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "hour_cos",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "hour_cos",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "hour_cos",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "hour_cos",
+      "dist_min20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "dist_max20",
+      "dist_min20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "dist_max20",
+      "dist_min20"
+    ],
+    [
+      "rolling_std_1d",
+      "ret_log",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "dist_max20",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "hour_cos",
+      "dist_max20",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "log_volume"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "log_volume"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "log_volume"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "hour_cos"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "hour_cos"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "hour_cos"
+    ],
+    [
+      "ret_log",
+      "range_hl",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "hour_cos"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "log_volume",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "atr_14",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "rolling_std_1h",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "hour_cos",
+      "macd"
+    ],
+    [
+      "ret_log",
+      "hour_cos",
+      "dist_max20"
+    ],
+    [
+      "ret_log",
+      "hour_cos",
+      "ma20_rel"
+    ],
+    [
+      "ret_log",
+      "hour_cos",
+      "dist_min20"
+    ],
+    [
+      "ret_log",
+      "dist_max20",
+      "dist_min20"
+    ]
+  ],
+  "selected_subsets": [
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "range_hl",
+        "log_volume"
+      ],
+      "score": 0.9610826417116425
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "range_hl",
+        "hour_cos"
+      ],
+      "score": 0.9393040740279817
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "rolling_std_1h",
+        "log_volume"
+      ],
+      "score": 0.9389593084912593
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "range_hl",
+        "macd"
+      ],
+      "score": 0.9343426817918172
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "range_hl",
+        "ma20_rel"
+      ],
+      "score": 0.9279740345789866
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "log_volume",
+        "hour_cos"
+      ],
+      "score": 0.9164642096630167
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "log_volume",
+        "macd"
+      ],
+      "score": 0.9151253174061811
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "rolling_std_1h",
+        "hour_cos"
+      ],
+      "score": 0.9135439394337392
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "log_volume",
+        "ma20_rel"
+      ],
+      "score": 0.9085709707963544
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "range_hl",
+        "dist_max20"
+      ],
+      "score": 0.9061393490071233
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "rolling_std_1h",
+        "macd"
+      ],
+      "score": 0.9057552915182958
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "range_hl",
+        "dist_min20"
+      ],
+      "score": 0.9012556373262344
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "rolling_std_1h",
+        "ma20_rel"
+      ],
+      "score": 0.8992002226720981
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "log_volume",
+        "dist_max20"
+      ],
+      "score": 0.8967824168746501
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "log_volume",
+        "dist_min20"
+      ],
+      "score": 0.8922477316752471
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "hour_cos",
+        "macd"
+      ],
+      "score": 0.8909165006753683
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "hour_cos",
+        "ma20_rel"
+      ],
+      "score": 0.8842885739430518
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "rolling_std_1h",
+        "dist_max20"
+      ],
+      "score": 0.8749238527822278
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "rolling_std_1h",
+        "dist_min20"
+      ],
+      "score": 0.8701487395316732
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "hour_cos",
+        "dist_max20"
+      ],
+      "score": 0.8684659031292427
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "hour_cos",
+        "dist_min20"
+      ],
+      "score": 0.866642204800942
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "dist_max20",
+        "dist_min20"
+      ],
+      "score": 0.821403512477793
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "log_volume",
+        "macd"
+      ],
+      "score": 0.7884928653394988
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "log_volume",
+        "macd"
+      ],
+      "score": 0.7877554084666185
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "range_hl"
+      ],
+      "score": 0.7862103582266
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "log_volume",
+        "ma20_rel"
+      ],
+      "score": 0.7824680016755265
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "log_volume",
+        "ma20_rel"
+      ],
+      "score": 0.7818422437976589
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "log_volume"
+      ],
+      "score": 0.7772145620015967
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "log_volume",
+        "dist_max20"
+      ],
+      "score": 0.7697556209517584
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "log_volume",
+        "macd"
+      ],
+      "score": 0.7690016848619167
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "log_volume",
+        "dist_min20"
+      ],
+      "score": 0.7644750429871476
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "log_volume",
+        "hour_cos"
+      ],
+      "score": 0.763524136563196
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "log_volume",
+        "ma20_rel"
+      ],
+      "score": 0.7629020985595898
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "hour_cos",
+        "macd"
+      ],
+      "score": 0.7626875746983539
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "log_volume",
+        "hour_cos"
+      ],
+      "score": 0.7609617182412407
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "log_volume",
+        "dist_max20"
+      ],
+      "score": 0.7589404081053399
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "hour_cos",
+        "ma20_rel"
+      ],
+      "score": 0.7567008299069045
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "hour_cos",
+        "macd"
+      ],
+      "score": 0.7566517705788494
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "rolling_std_1h"
+      ],
+      "score": 0.7557602543748911
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "hour_cos"
+      ],
+      "score": 0.7552848468245338
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "log_volume",
+        "dist_min20"
+      ],
+      "score": 0.753542223241801
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "hour_cos",
+        "ma20_rel"
+      ],
+      "score": 0.7505533267923874
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "log_volume",
+        "dist_max20"
+      ],
+      "score": 0.7483737913956825
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "log_volume",
+        "hour_cos"
+      ],
+      "score": 0.7450352503158179
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "log_volume",
+        "dist_min20"
+      ],
+      "score": 0.743201811861406
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "hour_cos",
+        "dist_max20"
+      ],
+      "score": 0.7405800901688993
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "hour_cos",
+        "macd"
+      ],
+      "score": 0.7402970497197928
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "hour_cos",
+        "dist_min20"
+      ],
+      "score": 0.7380104990753908
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "hour_cos",
+        "ma20_rel"
+      ],
+      "score": 0.7341238832949761
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "hour_cos",
+        "dist_max20"
+      ],
+      "score": 0.7229916163300958
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "dist_max20",
+        "dist_min20"
+      ],
+      "score": 0.721247502251126
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "hour_cos",
+        "dist_min20"
+      ],
+      "score": 0.7203044183376592
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "macd"
+      ],
+      "score": 0.720201325554243
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "hour_cos",
+        "macd"
+      ],
+      "score": 0.7193973677190906
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "hour_cos",
+        "dist_max20"
+      ],
+      "score": 0.7155614592389639
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "hour_cos",
+        "ma20_rel"
+      ],
+      "score": 0.7132249235306451
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "hour_cos",
+        "dist_min20"
+      ],
+      "score": 0.7131004665757898
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "hour_cos",
+        "dist_max20"
+      ],
+      "score": 0.7071503154427987
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "hour_cos",
+        "dist_min20"
+      ],
+      "score": 0.7049297508307764
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "ma20_rel"
+      ],
+      "score": 0.7033427095453544
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "dist_max20",
+        "dist_min20"
+      ],
+      "score": 0.7016496862390034
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "dist_max20"
+      ],
+      "score": 0.6948206925378
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "dist_max20",
+        "dist_min20"
+      ],
+      "score": 0.6908821081208719
+    },
+    {
+      "subset": [
+        "rolling_std_1d",
+        "ret_log",
+        "dist_min20"
+      ],
+      "score": 0.6903481127432638
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "dist_max20",
+        "dist_min20"
+      ],
+      "score": 0.6901637903450208
+    },
+    {
+      "subset": [
+        "ret_log",
+        "hour_cos",
+        "dist_max20",
+        "dist_min20"
+      ],
+      "score": 0.6686471962654998
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "log_volume"
+      ],
+      "score": 0.6413216979092231
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "log_volume"
+      ],
+      "score": 0.6363119271120163
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "log_volume"
+      ],
+      "score": 0.6206123232635368
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "macd"
+      ],
+      "score": 0.6202090388318048
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "hour_cos"
+      ],
+      "score": 0.6130936863787757
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "macd"
+      ],
+      "score": 0.6123214759668221
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "hour_cos"
+      ],
+      "score": 0.6079435656874053
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "ma20_rel"
+      ],
+      "score": 0.6043121957342168
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "ma20_rel"
+      ],
+      "score": 0.5962570843767154
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "dist_max20"
+      ],
+      "score": 0.5953430753403681
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "macd"
+      ],
+      "score": 0.5948133494036181
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "hour_cos"
+      ],
+      "score": 0.5919388804695074
+    },
+    {
+      "subset": [
+        "ret_log",
+        "range_hl",
+        "dist_min20"
+      ],
+      "score": 0.5897516563980204
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "macd"
+      ],
+      "score": 0.580537728685354
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "ma20_rel"
+      ],
+      "score": 0.5786368738559793
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "dist_max20"
+      ],
+      "score": 0.5704624135736618
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "dist_max20"
+      ],
+      "score": 0.5701265078964372
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "hour_cos"
+      ],
+      "score": 0.5679886262633316
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "dist_max20"
+      ],
+      "score": 0.56600522698512
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "dist_min20"
+      ],
+      "score": 0.5653945343535429
+    },
+    {
+      "subset": [
+        "ret_log",
+        "log_volume",
+        "ma20_rel"
+      ],
+      "score": 0.564362336492272
+    },
+    {
+      "subset": [
+        "ret_log",
+        "atr_14",
+        "dist_min20"
+      ],
+      "score": 0.5643586786056973
+    },
+    {
+      "subset": [
+        "ret_log",
+        "rolling_std_1h",
+        "dist_min20"
+      ],
+      "score": 0.5605767056882739
+    },
+    {
+      "subset": [
+        "ret_log",
+        "hour_cos",
+        "macd"
+      ],
+      "score": 0.5536741143813855
+    },
+    {
+      "subset": [
+        "ret_log",
+        "hour_cos",
+        "dist_max20"
+      ],
+      "score": 0.5374372537478012
+    },
+    {
+      "subset": [
+        "ret_log",
+        "hour_cos",
+        "ma20_rel"
+      ],
+      "score": 0.5373883520045688
+    },
+    {
+      "subset": [
+        "ret_log",
+        "hour_cos",
+        "dist_min20"
+      ],
+      "score": 0.536435854834336
+    },
+    {
+      "subset": [
+        "ret_log",
+        "dist_max20",
+        "dist_min20"
+      ],
+      "score": 0.5005742928424922
+    }
+  ],
+  "feature_sets_arg": "rolling_std_1d,ret_log,range_hl,log_volume|rolling_std_1d,ret_log,range_hl,hour_cos|rolling_std_1d,ret_log,rolling_std_1h,log_volume|rolling_std_1d,ret_log,range_hl,macd|rolling_std_1d,ret_log,range_hl,ma20_rel|rolling_std_1d,ret_log,log_volume,hour_cos|rolling_std_1d,ret_log,log_volume,macd|rolling_std_1d,ret_log,rolling_std_1h,hour_cos|rolling_std_1d,ret_log,log_volume,ma20_rel|rolling_std_1d,ret_log,range_hl,dist_max20|rolling_std_1d,ret_log,rolling_std_1h,macd|rolling_std_1d,ret_log,range_hl,dist_min20|rolling_std_1d,ret_log,rolling_std_1h,ma20_rel|rolling_std_1d,ret_log,log_volume,dist_max20|rolling_std_1d,ret_log,log_volume,dist_min20|rolling_std_1d,ret_log,hour_cos,macd|rolling_std_1d,ret_log,hour_cos,ma20_rel|rolling_std_1d,ret_log,rolling_std_1h,dist_max20|rolling_std_1d,ret_log,rolling_std_1h,dist_min20|rolling_std_1d,ret_log,hour_cos,dist_max20|rolling_std_1d,ret_log,hour_cos,dist_min20|rolling_std_1d,ret_log,dist_max20,dist_min20|ret_log,atr_14,log_volume,macd|ret_log,range_hl,log_volume,macd|rolling_std_1d,ret_log,range_hl|ret_log,atr_14,log_volume,ma20_rel|ret_log,range_hl,log_volume,ma20_rel|rolling_std_1d,ret_log,log_volume|ret_log,range_hl,log_volume,dist_max20|ret_log,rolling_std_1h,log_volume,macd|ret_log,range_hl,log_volume,dist_min20|ret_log,atr_14,log_volume,hour_cos|ret_log,rolling_std_1h,log_volume,ma20_rel|ret_log,range_hl,hour_cos,macd|ret_log,range_hl,log_volume,hour_cos|ret_log,atr_14,log_volume,dist_max20|ret_log,range_hl,hour_cos,ma20_rel|ret_log,atr_14,hour_cos,macd|rolling_std_1d,ret_log,rolling_std_1h|rolling_std_1d,ret_log,hour_cos|ret_log,atr_14,log_volume,dist_min20|ret_log,atr_14,hour_cos,ma20_rel|ret_log,rolling_std_1h,log_volume,dist_max20|ret_log,rolling_std_1h,log_volume,hour_cos|ret_log,rolling_std_1h,log_volume,dist_min20|ret_log,range_hl,hour_cos,dist_max20|ret_log,rolling_std_1h,hour_cos,macd|ret_log,range_hl,hour_cos,dist_min20|ret_log,rolling_std_1h,hour_cos,ma20_rel|ret_log,atr_14,hour_cos,dist_max20|ret_log,range_hl,dist_max20,dist_min20|ret_log,atr_14,hour_cos,dist_min20|rolling_std_1d,ret_log,macd|ret_log,log_volume,hour_cos,macd|ret_log,rolling_std_1h,hour_cos,dist_max20|ret_log,log_volume,hour_cos,ma20_rel|ret_log,rolling_std_1h,hour_cos,dist_min20|ret_log,log_volume,hour_cos,dist_max20|ret_log,log_volume,hour_cos,dist_min20|rolling_std_1d,ret_log,ma20_rel|ret_log,log_volume,dist_max20,dist_min20|rolling_std_1d,ret_log,dist_max20|ret_log,rolling_std_1h,dist_max20,dist_min20|rolling_std_1d,ret_log,dist_min20|ret_log,atr_14,dist_max20,dist_min20|ret_log,hour_cos,dist_max20,dist_min20|ret_log,atr_14,log_volume|ret_log,range_hl,log_volume|ret_log,rolling_std_1h,log_volume|ret_log,range_hl,macd|ret_log,range_hl,hour_cos|ret_log,atr_14,macd|ret_log,atr_14,hour_cos|ret_log,range_hl,ma20_rel|ret_log,atr_14,ma20_rel|ret_log,range_hl,dist_max20|ret_log,rolling_std_1h,macd|ret_log,rolling_std_1h,hour_cos|ret_log,range_hl,dist_min20|ret_log,log_volume,macd|ret_log,rolling_std_1h,ma20_rel|ret_log,log_volume,dist_max20|ret_log,atr_14,dist_max20|ret_log,log_volume,hour_cos|ret_log,rolling_std_1h,dist_max20|ret_log,log_volume,dist_min20|ret_log,log_volume,ma20_rel|ret_log,atr_14,dist_min20|ret_log,rolling_std_1h,dist_min20|ret_log,hour_cos,macd|ret_log,hour_cos,dist_max20|ret_log,hour_cos,ma20_rel|ret_log,hour_cos,dist_min20|ret_log,dist_max20,dist_min20"
+}

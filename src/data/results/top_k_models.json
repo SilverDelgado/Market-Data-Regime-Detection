@@ -1,0 +1,10 @@
+[
+    "data/models/grid_best_st3_full_rolling_std_1d-ret_log-rolling_std_1h-log_volume-dist_max20-macd_signal-dow_sin-dow_cos-adx.pkl",
+    "data/models/grid_best_st3_full_rolling_std_1d-ret_log-rolling_std_1h-log_volume-dist_max20-macd_signal-dow_sin-hour_sin-dow_cos.pkl",
+    "data/models/grid_best_st3_full_ret_log-range_hl-log_volume-dist_min20-macd_signal-dow_sin-hour_sin-dow_cos-adx.pkl",
+    "data/models/grid_best_st3_full_ret_log-rolling_std_1h-log_volume-dist_max20-macd_signal-dow_sin-hour_sin-dow_cos-adx.pkl",
+    "data/models/grid_best_st3_full_ret_log-rolling_std_1h-log_volume-dist_min20-macd_signal-dow_sin-hour_sin-dow_cos-adx.pkl",
+    "data/models/grid_best_st3_full_rolling_std_1d-ret_log-rolling_std_1h-hour_cos-dist_min20-dow_sin-hour_sin-dow_cos-adx.pkl",
+    "data/models/grid_best_st3_full_rolling_std_1d-ret_log-rolling_std_1h-dist_min20-macd_signal-dow_sin-hour_sin-dow_cos-adx.pkl",
+    "data/models/grid_best_st3_full_rolling_std_1d-ret_log-log_volume-hour_cos-dow_sin-hour_sin-dow_cos-adx-mfi_14.pkl"
+]
