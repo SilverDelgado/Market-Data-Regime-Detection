@@ -1,10 +1,10 @@
-# 📊 Market Data Regime Detection (Template)
+# 📊 Market Data Regime Detection 
 
 <div align="center">
 <img src="src/data/market master logo.jpg" alt="Market Master Logo" width="300"/>
 </div>
 
-Template project for detecting market regimes using machine learning models (HMM, Random Forest, XGBoost, and others). This repository includes scripts for preparing features, training HMMs, running experiment grids, evaluating models, and visualizing states on market data (e.g., EURUSD 15M).
+Project for detecting market regimes using machine learning models (HMM, Random Forest, XGBoost, and others). This repository includes scripts for preparing features, training HMMs, running experiment grids, evaluating models, and visualizing states on market data (e.g., EURUSD 15M).
 
 ## ✨ What it does
 
