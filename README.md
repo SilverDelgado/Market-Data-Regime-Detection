@@ -1,12 +1,15 @@
 # 📊 Market Data Regime Detection 
 
+
+## 
+
+Project for <b>detecting market regimes using machine learning models</b> (mainly HMM but will be expanded). This repository includes scripts for preparing features, training, running experiment grids, evaluating models, and visualizing states on market data (EURUSD 15M or else).
+
 <div align="center">
-<img src="src/data/market master logo.jpg" alt="Market Master Logo" width="300"/>
+<img src="data\img\overview.png" alt="Overview" width="600"/>
 </div>
 
-Project for detecting market regimes using machine learning models (HMM, Random Forest, XGBoost, and others). This repository includes scripts for preparing features, training HMMs, running experiment grids, evaluating models, and visualizing states on market data (e.g., EURUSD 15M).
-
-## ✨ What it does
+## 
 
 Analyzes market data to classify the current state into different regimes (e.g., bullish, bearish, ranging). The main workflow in this repository allows you to:
 
@@ -16,18 +19,23 @@ Analyzes market data to classify the current state into different regimes (e.g.,
 - Evaluate models and export states and probabilities in CSV/JSON.
 - Visualize states over the price series with a Streamlit app (`app.py`).
 
+<div align="center">
+<img src="data\img\states.png" alt="Stados" width="600"/>
+</div>
+
+
 ## Main structure
 
-- `app.py` — Streamlit viewer for HMM evaluation results. Loads `data/dataset_raw/...` and `src/data/results/eval_grid_best_*_states.csv` files.
-- `src/` — Main source code:
-- `train_hmm.py` — Trains HMMs using splits by size. Saves models in `src/data/models/` and results in `src/data/results/`.
-- `experiment_hmm.py` — Runs experimental grids (parallelizable with processes or threads) on sets of features, states, and covariances.
-- `evaluate_hmm.py` — Recalculates states/probabilities for saved models and generates summaries (transitions, durations, conditional statistics).
-- `preprocessing.py`, `build_feature_sets.py` — (support scripts) to generate and validate CSVs of features used by experiments.
-- `data/` — Data and artifacts:
-- `dataset_raw/DUKASCOPY_EURUSD_15_2000-01-01_2025-01-01.csv` — Price dataset used by default.
-- `features/` — Feature CSVs and JSONs with subsets (e.g., `fs_best_score_subsets.json`).
-- `models/`, `results/` — Training and evaluation outputs (.pkl models, .csv states, .json summaries, images).
+- `app.py` — Viewer for HMM evaluation results. 
+- `src/`:
+    - `train_hmm.py` — Trains HMMs using splits by size. Saves models in `src/data/models/` and results in `src/data/results/`.
+    - `experiment_hmm.py` — Runs experimental grids (parallelizable with processes or threads) on sets of features, states, and covariances.
+    - `evaluate_hmm.py` — Recalculates states/probabilities for saved models and generates summaries (transitions, durations, conditional statistics).
+    - `preprocessing.py`, `build_feature_sets.py` — (support scripts) to generate and validate CSVs of features used by experiments.
+- `data/` — Data:
+    - default dataset: `dataset_raw/DUKASCOPY_EURUSD_15_2000-01-01_2025-01-01.csv`
+    - feature CSVs and JSONs with subsets: `features/`
+    - training and evaluation outputs: `models/`, `results/`
 
 ## Authors
 
@@ -38,8 +46,10 @@ Analyzes market data to classify the current state into different regimes (e.g.,
 
 <div align="center">
 
-**⭐ If you like this project, leave us a star! ⭐**
-
-*Developed with ❤️ for traders and quant developers*
+**⭐ If you like this project, star would be appreciated hehe! ⭐**
+<div align="center">
+<img src="src/data/market master logo.jpg" alt="Market Master Logo" width="600"/>
+</div>
+*See you in the markets❤️*
 
 </div>
