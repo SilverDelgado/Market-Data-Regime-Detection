@@ -6,7 +6,7 @@
 Project for <b>detecting market regimes using machine learning models</b> (mainly HMM but will be expanded). This repository includes scripts for preparing features, training, running experiment grids, evaluating models, and visualizing states on market data (EURUSD 15M or else).
 
 <div align="center">
-<img src="data\img\overview.png" alt="Overview" width="600"/>
+<img src="data\img\overview.png" alt="Overview" width="800"/>
 </div>
 
 ## 
@@ -48,7 +48,7 @@ Analyzes market data to classify the current state into different regimes (e.g.,
 
 **⭐ If you like this project, star would be appreciated hehe! ⭐**
 <div align="center">
-<img src="src/data/market master logo.jpg" alt="Market Master Logo" width="600"/>
+<img src="src/data/market master logo.jpg" alt="Market Master Logo" width="800"/>
 </div>
 *See you in the markets❤️*
 
