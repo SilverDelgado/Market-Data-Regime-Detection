@@ -131,7 +131,7 @@ El hecho de usar un **"HMM Gaussiano"** (como haremos a continuación) no signif
     * Para cada subset candidato:
     * Calcula matriz de correlación entre sus features.
     * Si algún par tiene |ρ| > 0.85, elimina la menos relevante (según ranking inicial).
-    * Si el subset se queda con <3 features → se descarta.
+    * Si el subset se queda con < 3 features → se descarta.
     * Resultado: un conjunto de subsets filtrados y diversos.
 
 4.  **Deduplicación y poda**
@@ -170,7 +170,80 @@ Nuestro objetivo es comprimir la información de diferentes "velocidades" del me
 El problema es que muchos de estos features están altamente correlacionados (rolling_std_1h y rolling_std_4h se moverán juntas), un HMM Gaussiano sufre con features colineales (hace que la matriz de covarianza sea inestable), entonces lo que vamos a hacer es aplicar PCA a cada familia.
 Entonces nos quedamos con PC1 de cada familia, así tenemos VOLATILITY_FACTOR, MOMENTUM_FACTOR, VOLUME_FACTOR, esto de cada conjunto de features.
 
-Ahora simplemente entrenamos el HMM con estos features ;)
+Ahora simplemente entrenamos el HMM con estos features ; )
+
+## Familias de features:
+### --- Familia de Volatilidad ---
+Mide la dispersión y la magnitud de los movimientos del precio. 
+
+ Volatilidad histórica (basada en cierres)
+- 'rolling_std_1h'        # Volatilidad de retornos a corto plazo (~1h)
+- 'rolling_std_4h'        # Volatilidad de retornos intradía (~4h)
+- 'rolling_std_1d'        # Volatilidad de retornos diaria (~1d)
+
+ Volatilidad de rango (usa High-Low-Close)
+- 'atr_normalized_1h'     # ATR de ~1h, normalizado por el precio (ATR/Close)
+- 'atr_normalized_4h'     # ATR de ~4h, normalizado por el precio
+
+ Volatilidad de rango avanzada (estimadores más eficientes)
+- 'garman_klass_vol_4h'   # Estimador Garman-Klass en ventana de ~4h
+- 'garman_klass_vol_1d'   # Estimador Garman-Klass en ventana de ~1d
+
+ Volatilidad asimétrica (captura el "miedo")
+- 'downside_deviation_1d' # Desviación estándar solo de retornos negativos (~1d)
+
+---
+### --- Familia de Momentum ---
+Mide la velocidad, la aceleración y la fuerza de los cambios de precio. 
+
+Osciladores acotados (miden sobrecompra/sobreventa)
+- 'rsi_14_period'         # RSI estándar (14 velas de 15min)
+- 'rsi_56_period'         # RSI de plazo medio (~14 velas de 1h)
+- 'cci_20_period'         # Commodity Channel Index
+
+Indicador de fuerza de tendencia (no direccional)
+- 'adx_14_period'         # Mide si el mercado está en tendencia fuerte o en rango
+
+Momentum no acotado (mide la tasa de cambio)
+- 'roc_1h'                # Rate of Change (Tasa de Cambio) sobre una ventana de ~1h
+- 'roc_4h'                # Rate of Change sobre una ventana de ~4h
+
+Momentum con componente de volumen
+- 'mfi_14_period'         # Money Flow Index (un RSI ponderado por volumen)
+
+---
+### --- Familia de Volumen y Flujo de Mercado ---
+Mide la participación, la presión de compra/venta y la confirmación de movimientos.
+
+Detección de volumen anómalo
+- 'log_volume_zscore_1d'  # Z-score del volumen logarítmico para detectar picos (~1d)
+- 'log_volume_zscore_5d'  # Z-score del volumen en una ventana más larga (~5d)
+
+Flujo de volumen acumulado (confirma tendencia)
+- 'obv_slope_4h'          # Pendiente del On-Balance Volume (OBV) en una ventana de ~4h
+- 'obv_slope_1d'          # Pendiente del OBV en una ventana de ~1d
+
+Presión de compra/venta intradía
+- 'ad_line_slope_4h'      # Pendiente de la Accumulation/Distribution Line (~4h)
+
+---
+### --- Familia de Tendencia ---
+Mide la dirección sostenida y la inercia del mercado.
+
+Pendiente de las medias móviles (tendencia directa)
+- 'ma_slope_4h'           # Pendiente de una media móvil simple de ~4h
+- 'ma_slope_1d'           # Pendiente de una media móvil simple de ~1d
+
+Posición relativa al promedio (mide sobreextensión)
+- 'price_vs_ma_1d'        # (Precio de Cierre - MA de 1 día) / MA de 1 día
+- 'price_vs_ma_5d'        # Distancia a una media móvil más larga (~5d)
+
+Señal de cruce de medias
+- 'ema_cross_signal'      # 1 si EMA rápida > EMA lenta, -1 si es al revés
+
+#### a todo esto se le debe aplicar una normalizacion de escala antes de aplicar PCA. (Si no escalas tus features, aquellos con rangos numéricos más grandes dominarán por completo el análisis, no porque sean más importantes, sino simplemente porque sus números son más grandes.)
+
+Ahora aplicaremos el Standard Scalesr, pero en un futuro podemos cambiar a otro si vemos que mejora los resultados.
 
 ### Otra mejora, Cambiar de distribución
 Ahora mismo estamos usando un Gaussian HMM.
