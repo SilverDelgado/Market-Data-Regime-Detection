@@ -20,8 +20,16 @@ Analyzes market data to classify the current state into different regimes (e.g.,
 - Visualize states over the price series with a Streamlit app (`app.py`).
 
 <div align="center">
-<img src="data\img\states.png" alt="Stados" width="600"/>
+<img src="data\img\image.png" alt="distribucion" width="800"/>
 </div>
+<div align="center">
+<img src="data\img\image2.png" alt="Stados1" width="600"/>
+</div>
+
+<div align="center">
+<img src="data\img\image3.png" alt="Stados2" width="600"/>
+</div>
+
 
 
 ## Main structure
