@@ -23,11 +23,11 @@ Analyzes market data to classify the current state into different regimes (e.g.,
 <img src="data\img\image.png" alt="distribucion" width="800"/>
 </div>
 <div align="center">
-<img src="data\img\image2.png" alt="Stados1" width="600"/>
+<img src="data\img\image2.png" alt="Stados1" width="800"/>
 </div>
 
 <div align="center">
-<img src="data\img\image3.png" alt="Stados2" width="600"/>
+<img src="data\img\image3.png" alt="Stados2" width="800"/>
 </div>
 
 
