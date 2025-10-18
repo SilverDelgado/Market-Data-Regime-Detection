@@ -6,7 +6,7 @@
 Project for <b>detecting market regimes using machine learning models</b> (mainly HMM but will be expanded). This repository includes scripts for preparing features, training, running experiment grids, evaluating models, and visualizing states on market data (EURUSD 15M or else).
 
 <div align="center">
-<img src="data\img\image.png" alt="Overview" width="800"/>
+<img src="data\img\overview.png" alt="Overview" width="800"/>
 </div>
 
 ## 
@@ -20,11 +20,14 @@ Analyzes market data to classify the current state into different regimes (e.g.,
 - Visualize states over the price series with a Streamlit app (`app.py`).
 
 <div align="center">
-<img src="data\img\image2.png" alt="Stados" width="600"/>
+<img src="data\img\image.png" alt="distribucion" width="800"/>
+</div>
+<div align="center">
+<img src="data\img\image2.png" alt="Stados1" width="600"/>
 </div>
 
 <div align="center">
-<img src="data\img\image3.png" alt="Stados" width="600"/>
+<img src="data\img\image3.png" alt="Stados2" width="600"/>
 </div>
 
 
