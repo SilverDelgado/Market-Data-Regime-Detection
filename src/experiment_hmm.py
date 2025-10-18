@@ -1,10 +1,3 @@
-"""
-experiment_hmm.py 
-- Paraleliza el grid (feature_sets × states × cov)
-- Cada worker guarda el mejor modelo de su configuración (si --save-models).
-- Evita transferir modelos por IPC (solo devuelve métricas).
-"""
-
 from pathlib import Path
 import argparse
 import json
@@ -26,9 +19,31 @@ def _init_worker(features_file: str):
     """
     Inicializa el DataFrame en cada proceso para no re-enviarlo por IPC.
     Se ejecuta una vez por worker.
+    
+    MODIFICADO: Ahora también elimina los fines de semana y los NaN en 'log_return'.
     """
     global _DF, _DF_READY
-    _DF = pd.read_csv(features_file, index_col="datetime", parse_dates=True)
+    try:
+        _DF = pd.read_csv(features_file, index_col="timestamp", parse_dates=True)
+    except ValueError:
+        _DF = pd.read_csv(features_file, index_col="id")
+
+    initial_rows = len(_DF)
+    
+    # 1. Eliminar filas con NaN en log_return
+    _DF.dropna(subset=['log_return'], inplace=True)
+    
+    # 2. Eliminar fines de semana (sábado=5, domingo=6)
+    if isinstance(_DF.index, pd.DatetimeIndex):
+        is_weekday = _DF.index.dayofweek < 5
+        _DF = _DF[is_weekday]
+
+    final_rows = len(_DF)
+    if initial_rows > final_rows:
+        print(f"[limpieza worker] Filas iniciales: {initial_rows}. "
+              f"Se eliminaron {initial_rows - final_rows} filas (NaNs y/o fines de semana). "
+              f"Filas finales: {final_rows}.")
+        
     _DF_READY = True
 
 # ---------------------------
@@ -277,7 +292,7 @@ def main():
     parser.add_argument("--split-limit", type=int, default=None)
 
     parser.add_argument("--save-models", action="store_true", default=True, help="Guardar mejor modelo por configuración.")
-    parser.add_argument("--keep-top-k", type=int, default=8, help="Solo informar top-K por ll_val_per_obs_mean.")
+    parser.add_argument("--keep-top-k", type=int, default=4, help="Solo informar top-K por ll_val_per_obs_mean.")
 
     # === NUEVO: paralelización ===
     parser.add_argument("--n-jobs", type=int, default=-1,
@@ -304,14 +319,35 @@ def main():
     states_list  = parse_list_arg(args.states_list)
     cov_list     = parse_list_arg(args.cov_list)
 
-    # Validación de columnas (sin cargar todo el CSV si vamos con procesos)
+    # Validación de columnas y carga/limpieza de datos
     if args.backend == "processes" and args.n_jobs != 1:
+        # En modo proceso, cada worker carga sus datos, aquí solo validamos columnas
         cols_df = pd.read_csv(args.features_file, nrows=0)  # solo cabecera
-        all_cols = set(cols_df.columns) - {"datetime"}
-        # no necesitamos df aquí; cada worker cargará el CSV
-        df_main = None
+        all_cols = set(cols_df.columns) - {"datetime", "id"}
+        df_main = None # No cargamos el DF completo en el proceso principal
     else:
-        df_main = pd.read_csv(args.features_file, index_col="datetime", parse_dates=True)
+        # df_main se usa en modo secuencial o con hilos
+        print("[INFO] Cargando y limpiando el dataset en el proceso principal...")
+        try:
+            df_main = pd.read_csv(args.features_file, index_col="datetime", parse_dates=True)
+        except ValueError:
+            df_main = pd.read_csv(args.features_file, index_col="id")
+        
+        initial_rows = len(df_main)
+        
+        # 1. Eliminar NaNs
+        df_main.dropna(subset=['log_return'], inplace=True)
+
+        # 2. Eliminar fines de semana
+        if isinstance(df_main.index, pd.DatetimeIndex):
+            df_main = df_main[df_main.index.dayofweek < 5]
+        
+        final_rows = len(df_main)
+        if initial_rows > final_rows:
+             print(f"[limpieza main] Filas iniciales: {initial_rows}. "
+                   f"Se eliminaron {initial_rows - final_rows} filas (NaNs y/o fines de semana). "
+                   f"Filas finales: {final_rows}.")
+
         all_cols = set(df_main.columns)
 
     for fs in feature_sets:
@@ -383,7 +419,8 @@ def main():
                         saved_models.append(res["saved_model"])
     elif n_jobs == 1:
         print("[SEQ] Ejecutando en modo secuencial...")
-        for fs, k, cov in tasks:
+        for i, (fs, k, cov) in enumerate(tasks, 1):
+            print(f"[SEQ] Procesando tarea {i}/{len(tasks)}: st{k}_{cov}_{'-'.join(fs)}")
             res = _run_single_config_worker(fs, k, cov, args_dict, str(models_dir), use_global_df=False)
             if res["error"]:
                 errors.append(res["error"])
@@ -437,7 +474,7 @@ def main():
         print(f"Guardado summary:   {cfg_csv}")
 
         # Top-K (informativo)
-        if args.save_models and args.keep_top_k is not None:
+        if args.save_models and args.keep_top_k is not None and "ll_val_per_obs_mean" in df_cfg.columns:
             top_cfgs = df_cfg.dropna(subset=["ll_val_per_obs_mean"]).head(int(args.keep_top_k))["config_id"].tolist()
             print("\nTop-K por ll_val_per_obs_mean:")
             for cid in top_cfgs:

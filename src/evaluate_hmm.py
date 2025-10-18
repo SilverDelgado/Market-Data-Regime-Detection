@@ -45,7 +45,7 @@ def main():
     parser.add_argument("--models-file", type=str, default=str(default_root / "results" / "top_k_models.json"),
                         help="Archivo JSON con rutas a modelos o lista separada por comas (para evaluar múltiples modelos)")
     parser.add_argument("--out-root", type=str, default=str(default_root), help="Carpeta base data/ para results")
-    parser.add_argument("--price-col", type=str, default="close", help="Columna de precio para los gráficos")
+    parser.add_argument("--price-col", type=str, default="Close", help="Columna de precio para los gráficos")
     parser.add_argument("--tag", type=str, default="")
     args = parser.parse_args()
 
@@ -54,9 +54,24 @@ def main():
     models_dir = out_root / "models"  # Directorio de modelos
     ensure_dirs(results_dir, models_dir)
 
-    # Cargar datos
-    df = pd.read_csv(args.features_file, index_col="datetime", parse_dates=True)
+    df = pd.read_csv(args.features_file, index_col="timestamp", parse_dates=True)
+    
+    initial_rows = len(df)
+    
+    # 1. Eliminar filas con NaN en log_return
+    df.dropna(subset=['log_return'], inplace=True)
+    
+    # 2. Eliminar fines de semana (sábado=5, domingo=6)
+    if isinstance(df.index, pd.DatetimeIndex):
+        is_weekday = df.index.dayofweek < 5
+        df = df[is_weekday]
 
+    final_rows = len(df)
+    if initial_rows > final_rows:
+        print(f"[limpieza] Filas iniciales: {initial_rows}. "
+              f"Se eliminaron {initial_rows - final_rows} filas (NaNs y/o fines de semana). "
+              f"Filas finales: {final_rows}.")
+    
     # Evaluar un solo modelo
     if args.model_file:
         models = [args.model_file]
@@ -104,7 +119,7 @@ def main():
         for k in range(model.n_components):
             df_out[f"p_state{k}"] = probs[:, k]
         df_out["state"] = states
-        df_out[[args.price_col, "state"] + [c for c in df_out.columns if c.startswith("p_state")]].to_csv(csv_states)
+        df_out[[args.price_col, "state"] + [c for c in df_out.columns if c.startswith("p_state")]].to_csv(csv_states, index=True)
 
         # Resumen (sin gráficos)
         transmat = model.transmat_  # KxK

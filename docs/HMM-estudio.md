@@ -254,3 +254,39 @@ Una mejora que se suele implementar es cambiar la distribución gaussiana por un
 - Captura los fat tails dentro de cada régimen con la distribución T-Student
 *** fat tails son eventos que la distribución dice que ocurren con muy poca frecuencia cuando en realidad ocurre mucho más frecuentemente ***
 
+#### Por hacer:
+
+Cosas a probar para las estrategias:
+
+- Las estrategias las entrenamos en todo el dataset de train y sacamos los mejores parametros, despues las probamos en cada estado y los estados que den mejor resultados se los adjudicamos a esa estrategia y cuando las operemos permitimos que solo compren en ese estado o esos estados.
+
+- Las estrategias las entrenamos de nuevo pero en vez de todo el dataset de train sin ningun tipo de barrera, solo en el dataset de train con la unica posibilidad de abrir operación en ese x estado que se esta probando. Así nos quedamos con la mejor configuración de parámetros en ese x estado, obtenemos varias configuraciones para varios estados pero nos quedamos con la configuración final mejor y el estado final mejor.
+
+
+#### Ejecución en modo real:
+Debemos guardar:
+- Paso 1
+  - El Modelo HMM Entrenado
+  - Los Escaladores Ajustados (uno por cada una de tus 4 familias. Estos escaladores deben haber sido ajustados únicamente con los datos de entrenamiento.)
+  - Los Modelos PCA Ajustados (uno por cada una de tus 4 familias, también ajustado únicamente sobre los datos de entrenamiento ya escalados)
+  - Las Listas de Features
+  - El Orden Final de los Factores: El orden de las columnas (pca_volatilidad, pca_momentum, log_return, etc.) que el modelo HMM espera recibir.
+
+- Paso 2
+  - Extrae los features de la familia de volatilidad de la nueva fila.
+  - Aplica el escalador correspondiente
+  - Aplica el PCA correspondiente
+  - Repite este proceso para las familias de momentum, volumen y tendencia.
+
+- Paso 3
+  - Ensamblar el Vector Final
+  - Calcula el log_return para la nueva vela.
+  - Crea un array de NumPy o un DataFrame de una fila con los factores PCA y el log_return en el orden exacto que espera el modelo
+
+- Paso 4
+  - Usa el modelo HMM cargado para predecir sobre este vector final.
+  Según este resultado de estado, usaremos una estrategia u otra tras haberlas entrenado previamente en los estados diferentes e inferido el mejor estado para cada una de ellas.
+
+
+
+
