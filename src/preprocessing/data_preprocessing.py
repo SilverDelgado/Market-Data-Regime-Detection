@@ -7,6 +7,7 @@ import sys
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
+from sklearn.preprocessing import StandardScaler
 
 # If script is executed directly, ensure project root is on sys.path so `src` is importable.
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -57,6 +58,7 @@ RAW = DATA_DIR / 'raw' / 'DUKASCOPY_EURUSD_15_2000-01-01_2025-01-01.csv'
 PRE = DATA_DIR / 'preprocessed'
 PRE.mkdir(parents=True, exist_ok=True)
 
+ohlcv_cols = ['Open', 'High', 'Low', 'Close', 'Volume']
 
 def preprocess_eurusd_15m(raw_path: Path = RAW, out_dir: Path = PRE) -> Path:
     df = load_csv(str(raw_path))
@@ -113,16 +115,12 @@ def preprocess_eurusd_15m(raw_path: Path = RAW, out_dir: Path = PRE) -> Path:
         features[f'price_vs_ma_{w}'] = price_vs_ma(df, window=w)
         features[f'ema_cross_signal_{w}'] = ema_cross_signal(df, window=w)
 
-    # Add all features at once to avoid fragmentation
     df = pd.concat([df, pd.DataFrame(features)], axis=1)
-
-    # Z-score normalize numeric features (use select_dtypes for safety)
-    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
-    from sklearn.preprocessing import StandardScaler
+    
     scaler = StandardScaler()
-    df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
+    feature_cols_to_normalize = [col for col in df.select_dtypes(include=[np.number]).columns if col not in ohlcv_cols]
+    df[feature_cols_to_normalize] = scaler.fit_transform(df[feature_cols_to_normalize])
 
-    # Reset index to make time a column, add numeric id
     df = df.reset_index().rename(columns={'index': 'time'})
     df = df.assign(id=df.index)
 

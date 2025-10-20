@@ -289,4 +289,25 @@ Debemos guardar:
 
 
 
+## Wavelet analysis
+
+What i think is the most logical way of applying it would be starting by generating all  feature families like  volatility, momentum, trend etc and each containing their respective indicators in different windows.
+then standarize every family using a scaler fitted on the training set, then apply pca to each family.
+
+after that, compute your wavelet features using a stationary wavelet transform on your return  for example. then from each wavelet level, you extract statistics such as var, kurt, skew, and entropy. Now with these you have the wavelet 'family'.
+now you compare each wavelet feature with every original feature inside each family.
+if a wavelet feature is highly correlated with features from a family, you add it as part of that family and then  redo that familys pca so the information is captured together.
+
+
+
+If a wavelet feature shows low correlation with all indicators, keep it separate inside the wavelet family
+
+After done with this, check whether the remaining independent wavelet features still have strong correlation with any pca component from the 
+ families.
+
+If a remaining wavelet feature is strongly correlated with one pca component, it’s redundant and you can delete it.
+
+If not, simple, it means it does indeed add important info so it stays in the independent wavelet family, which will also receive its own scaler and pca.
+
+Now just add this to your hmm and train
 
